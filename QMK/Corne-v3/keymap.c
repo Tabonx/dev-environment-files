@@ -25,6 +25,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OSM_LSFT OSM(MOD_LSFT)
 #define OSM_HYPR OSM(MOD_HYPR)
 
+#define HM_A LGUI_T(CZ_A)   // Hold for Command, tap for 'a'
+#define HM_S LALT_T(CZ_S)   // Hold for Option, tap for 's'
+#define HM_D LCTL_T(CZ_D)   // Hold for Control, tap for 'd'
+#define HM_F LSFT_T(CZ_F)   // Hold for Shift, tap for 'f'
+
+#define HM_J RSFT_T(CZ_J)   // Hold for Shift, tap for 'j'
+#define HM_K RCTL_T(CZ_K)   // Hold for Control, tap for 'k'
+#define HM_L RALT_T(CZ_L)   // Hold for Option, tap for 'l'
+#define HM_SCLN RGUI_T(KC_EQL) // Hold for Command, tap for ';'
 
 enum layers{
   _DEFAULT = 0,
@@ -35,13 +44,12 @@ enum layers{
   _FUNCTION,
 };
 
- 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DEFAULT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB,    CZ_Q,    CZ_W,    CZ_E,    CZ_R,    CZ_T,                         CZ_Z,    CZ_U,    CZ_I,    CZ_O,   CZ_P,  KC_ESC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    CZ_A,    CZ_S,    CZ_D,    CZ_F,    CZ_G,                         CZ_H,    CZ_J,    CZ_K,    CZ_L,  KC_EQL, XXXXXXX,
+      KC_LCTL,    HM_A,    HM_S,    HM_D,    HM_F,    CZ_G,                         CZ_H,    HM_J,    HM_K,    HM_L, HM_SCLN, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      OSM_LSFT,    CZ_Y,    CZ_X,    CZ_C,    CZ_V,    CZ_B,                         CZ_N,    CZ_M, CZ_COMM,  CZ_DOT, CZ_BSLS,  KC_RALT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
